@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tamara — an illustrative representation and leadership dashboard for women in technology." />
+  <title>Tamara | Women in Technology Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">T</div>
+      <div>
+        <h1>Tamara</h1>
+        <p>Women in Tech Intelligence</p>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-item active" data-view="overview">Overview</button>
+      <button class="nav-item" data-view="leaders">Leaders</button>
+      <button class="nav-item" data-view="comparison">Comparison</button>
+      <button class="nav-item" data-view="pipeline">Leadership Pipeline</button>
+    </nav>
+
+    <div class="sidebar-note">
+      <span class="eyebrow">Data notice</span>
+      <p>Public-figure names are real. Scores and trend metrics are intentionally mock/illustrative for product prototyping.</p>
+    </div>
+  </aside>
+
+  <main class="main-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Representation + leadership intelligence</p>
+        <h2>Where influence, innovation and visibility intersect.</h2>
+      </div>
+      <div class="topbar-actions">
+        <select id="segmentFilter" aria-label="Filter segment">
+          <option value="all">All women</option>
+          <option value="black">Black women</option>
+          <option value="other">Other women</option>
+        </select>
+        <button id="resetBtn" class="ghost-btn">Reset</button>
+      </div>
+    </header>
+
+    <section id="overview" class="view active-view">
+      <div class="hero-card">
+        <div class="hero-copy">
+          <span class="eyebrow">Tamara Signal</span>
+          <h3>Representation deserves context, not just a count.</h3>
+          <p>Tamara surfaces visibility, leadership pathways, technical influence and founder activity across a representative set of well-known women in technology.</p>
+        </div>
+        <div class="hero-number">
+          <span id="heroCount">16</span>
+          <small>leaders in mock cohort</small>
+        </div>
+      </div>
+
+      <div class="kpi-grid">
+        <article class="kpi-card"><span class="kpi-label">Black women represented</span><strong id="blackShare">50%</strong><small>of this mock cohort</small></article>
+        <article class="kpi-card"><span class="kpi-label">Founder / investor profile</span><strong id="founderShare">44%</strong><small>illustrative share</small></article>
+        <article class="kpi-card"><span class="kpi-label">Executive leadership</span><strong id="executiveShare">69%</strong><small>illustrative share</small></article>
+        <article class="kpi-card"><span class="kpi-label">Avg. visibility index</span><strong id="visibilityAvg">83</strong><small>mock score / 100</small></article>
+      </div>
+
+      <div class="dashboard-grid">
+        <article class="panel span-2">
+          <div class="panel-heading">
+            <div><span class="eyebrow">Comparison</span><h3>Illustrative influence by dimension</h3></div>
+            <div class="legend"><span><i class="dot black-dot"></i>Black women</span><span><i class="dot other-dot"></i>Other women</span></div>
+          </div>
+          <div id="barChart" class="bar-chart"></div>
+        </article>
+        <article class="panel spotlight-panel"><span class="eyebrow">Spotlight</span><div id="spotlight"></div></article>
+      </div>
+
+      <div class="dashboard-grid">
+        <article class="panel"><span class="eyebrow">Leadership paths</span><h3>Role mix</h3><div id="roleMix" class="donut-wrap"></div></article>
+        <article class="panel span-2"><div class="panel-heading"><div><span class="eyebrow">Visibility</span><h3>Mock influence map</h3></div></div><div id="bubbleChart" class="bubble-chart"></div></article>
+      </div>
+    </section>
+
+    <section id="leaders" class="view">
+      <div class="section-heading"><div><span class="eyebrow">Leader directory</span><h2>Prominent women shaping technology</h2></div><input id="searchInput" type="search" placeholder="Search leader, role, or field…" /></div>
+      <div id="leaderGrid" class="leader-grid"></div>
+    </section>
+
+    <section id="comparison" class="view">
+      <div class="section-heading"><div><span class="eyebrow">Representation lens</span><h2>Compare without reducing people to a score.</h2></div></div>
+      <div class="comparison-note">The dashboard compares representation patterns and mock product metrics. It does not claim that racial identity determines ability, achievement, or potential.</div>
+      <div id="comparisonTable" class="table-card"></div>
+    </section>
+
+    <section id="pipeline" class="view">
+      <div class="section-heading"><div><span class="eyebrow">Product concept</span><h2>Leadership pipeline signals</h2></div></div>
+      <div class="pipeline-grid">
+        <article class="pipeline-card"><span>01</span><h3>Visibility</h3><p>Track public speaking, media presence, technical publications and industry reach.</p></article>
+        <article class="pipeline-card"><span>02</span><h3>Opportunity</h3><p>Layer in board roles, executive mobility, funding, mentorship and sponsorship pathways.</p></article>
+        <article class="pipeline-card"><span>03</span><h3>Network Power</h3><p>Map ecosystem influence across companies, accelerators, investors, universities and communities.</p></article>
+        <article class="pipeline-card"><span>04</span><h3>Next Generation</h3><p>Extend Tamara into a discovery engine for emerging Black women technologists and future leaders.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
